@@ -1,0 +1,114 @@
+
+<div class="row card-box">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mt-2 mb-3">
+                Student Registration
+            </h2>
+        </div>
+        
+            <div class="custom-Tabs">
+                <div class="task-bar">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                </li>
+                            </ul> -->
+                
+                            <div class="tabs-bar">
+                
+                                <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-uppercase" id="home-tab" data-toggle="tab"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                                            href="#home" [routerLink]="['./']" role="tab" aria-controls="home"
+                                            aria-selected="false">Student Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-uppercase" id="profile-tab" data-toggle="tab"
+                                            href="#parent" [routerLink]="['./parent']" role="tab" aria-controls="profile"
+                                            aria-selected="false">Parent Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-uppercase" id="guardian-tab" data-toggle="tab"
+                                            href="#guardian" [routerLink]="['./guardian']" role="tab" aria-controls="profile"
+                                            aria-selected="false">Guardian Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-uppercase" id="substitute-tab" data-toggle="tab"
+                                            href="#receiver" [routerLink]="['./receiver']" role="tab" aria-controls="profile"
+                                            aria-selected="false"> 
+                                            Receiver Information                                    
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-uppercase" id="substitute-tab" data-toggle="tab"
+                                            href="#document" [routerLink]="['./document']" role="tab" aria-controls="profile"
+                                            aria-selected="false"> 
+                                            Documents                                    
+                                        </a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link text-uppercase" id="substitute-tab" data-toggle="tab"
+                                            href="#image" [routerLink]="['./image']" role="tab" aria-controls="profile"
+                                            aria-selected="false"> 
+                                            Student Picture                                    
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-uppercase" id="substitute-tab" data-toggle="tab"
+                                            href="#fee" [routerLink]="['./fee']" role="tab" aria-controls="profile"
+                                            aria-selected="false"> 
+                                             Fee                                  
+                                        </a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+
+          
+
+            </div>
+      
+
+            <div>
+                <div class="card-body">
+                    <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <router-outlet></router-outlet>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+
+     </div>
+ </div>
+ 

@@ -1,0 +1,132 @@
+.example-full-width {
+    width: 100%;
+  }
+
+
+  // .card-body{
+  //   border-top: 3px solid Black;
+  // }
+
+  .pull-right {
+    float: right !important;
+  }
+
+  
+  .custom-Tabs {
+    .tabs-bar {
+        width: 100%;
+        // height: 60px;
+        overflow-x: auto;
+        &:-webkit-scrollbar-track {
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar {
+            width: 2px;
+            height: 10px;
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+            background-color: #ddd;
+        }
+    }
+    .nav-drop-list {
+        position: absolute;
+        right: 15px;
+        top: 0px;
+        width: 50px;
+        text-align: center;
+        background-color: white;
+        padding: 5px;
+    }
+
+    // .customDropList{
+    //   outline: none !important;
+    //   border-radius: 0 !important;
+    //   border: 1px solid #2c2b2b99 !important;
+    //   border-radius: 5px !important;
+    //   min-height: 0px !important;
+    //   top: 4px !important;
+
+    // }
+
+    .ng-select.custom {
+      
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #564c4c99;
+      font-family: Roboto, sans-serif;
+  }
+  
+
+
+}
+
+
+
+// Doenloas?
+
+.file-list-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.file-list-item .file-name {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.file-list-item .download-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.file-list-item .download-button:hover {
+  background-color: #0056b3;
+}
+
+// .student-photo-container {
+//   width: 250px !important;
+//   height: 250px !important;
+//   overflow: hidden; /* This ensures that the image won't overflow the container */
+// }
+
+// .student-photo-container img {
+//   max-width: 100%;
+//   max-height: 100%;
+//   display: block; /* This removes any extra space below the image */
+//   margin: auto; /* This centers the image within the container */
+// }
+
+.student-photo-container {
+  width: 415px !important;
+  height: 423px !important;
+  margin-bottom: 15px;
+  overflow: hidden !important;
+  margin-left: 90px;
+  margin-top: 40px;
+}
+
+.student-photo-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}

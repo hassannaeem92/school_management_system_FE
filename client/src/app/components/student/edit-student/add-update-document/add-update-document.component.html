@@ -1,0 +1,193 @@
+<div class="row card-box">
+    <div class="col-md-12">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && updateDocument(f)">
+        
+            <div class="custom-Tabs">
+          
+                <div class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+                    <div class="card-header">
+                        Document Info
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                              <!-- Birth Certificate -->
+                                                <label for="formFile" class="form-label"> Parent CNIC</label>
+                                                <input
+                                                  name="birthCertificate"
+                                                  [(ngModel)]="model.birth_certificate"
+                                                  
+                                                  [disabled]="!enableBC"
+                                                  (change)="onSelectFile($event, 'birthCertificate')"
+                                                  #BirthCertificate="ngModel" #file
+                                                  class="form-control"
+                                                  type="file"
+                                                  id="formFile"
+                                                  accept=".pdf"
+                                                >
+                                                <div *ngIf="BirthCertificate.invalid && (BirthCertificate.dirty)"
+                                                     class="text-danger">
+                                                  Please choose a valid PDF file.
+                                                </div>
+                                              </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                              <label for="beFormFile" class="form-label">Be Form</label>
+                                              <input
+                                                name="beForm"
+                                                
+                                                [(ngModel)]="model.b_form"
+                                                (change)="onSelectFile($event, 'beForm')"
+                                                #BeForm="ngModel"
+                                                accept=".pdf"
+                                                #beFormFile
+                                                [disabled]="!enableBF"
+                                                class="form-control"
+                                                type="file"
+                                                id="beFormFile"
+                                              >
+                                              <div *ngIf="BeForm.invalid && (BeForm.dirty)" class="text-danger">
+                                                Please choose a valid PDF file.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4">
+                                            <div class="mb-3">
+                                              <label for="chrCertificateFile" class="form-label">Character Certificate</label>
+                                              <input
+                                                name="chrCertificate"
+                                                
+                                                [disabled]="!enableCC"
+                                                [(ngModel)]="model.character_certificate"
+                                                (change)="onSelectFile($event, 'chrCertificate')"
+                                                #ChrCertificate="ngModel"
+                                                accept=".pdf"
+                                                #chrCertificateFile
+                                                class="form-control"
+                                                type="file"
+                                                id="chrCertificateFile"
+                                              >
+                                              <div *ngIf="ChrCertificate.invalid && (ChrCertificate.dirty)" class="text-danger">
+                                                Please choose a valid PDF file.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4">
+                                            <div class="mb-3">
+                                              <label for="resultFile" class="form-label">Previous School Result Card</label>
+                                              <input
+                                                name="result"
+                                                
+                                                [disabled]="!enableRC"
+                                                [(ngModel)]="model.previous_school_result_card"
+                                                (change)="onSelectFile($event, 'result')"
+                                                #Result="ngModel"
+                                                accept=".pdf"
+                                                #resultFile
+                                                class="form-control"
+                                                type="file"
+                                                id="resultFile"
+                                              >
+                                              <div *ngIf="Result.invalid && (Result.dirty)" class="text-danger">
+                                                Please choose a valid PDF file.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          
+                                        <!-- <div class="col-md-4">
+                                            <mat-form-field appearance="outline" class="example-full-width">
+                                                <mat-label>Name</mat-label>
+                                                <input matInput type="text" 
+                                                
+                                                name="vacationDays" placeholder=""  [(ngModel)]="model.numberOfDays"
+                                                #vacationDays="ngModel" >
+                                            </mat-form-field>
+                                        </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            </div>
+
+                            <div class="row mt-4" *ngIf="uploadedFiles.length > 0">
+                                <div class="col-md-10">
+                                  <div class="table-responsive">
+                                    <table class="table table-bordered custom-table">
+                                      <thead class="table-dark">
+                                        <tr>
+                                          <th scope="col">Id</th>
+                                          <th scope="col">Name</th>
+                                          <th scope="col" width="20%">Action</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr *ngIf="uploadedFiles.length === 0">
+                                          <td colspan="3" class="text-center">No Data</td>
+                                        </tr>
+                                        <ng-container *ngFor="let item of uploadedFiles; let i = index">
+                                          <tr>
+                                            <th scope="row">{{ i + 1 }}</th>
+                                            <td>{{ item.fileName }}</td>
+                                            <td>
+                                              <button type="button" class="btn btn-success btn-sm" (click)="downloadFile(item.files)">
+                                                <i class="fa fa-download"></i>View / Download
+                                              </button>
+                                              <button type="button" class="btn btn-danger btn-sm ml-2" (click)="DeleteFile(item.fileValue)">
+                                                <i class="fa fa-trash"></i> Delete
+                                              </button>
+                                              <!-- Uncomment the following lines if you want to include a delete button -->
+                                              <!--
+                                              <button type="button" class="btn btn-danger btn-sm ms-3" (click)="delete(item)">
+                                                <i class="fa fa-trash"></i> Delete
+                                              </button>
+                                              -->
+                                            </td>
+                                          </tr>
+                                        </ng-container>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                              
+
+
+                            <!-- <div class="container">
+                                <div class="square-box">
+                                    <span class="file-name">{{documentsArray.b_form}}</span>
+                                    <button (click)="downloadPrintFunctionality(file)" class="download-button">Download</button>
+                                    
+                                </div>
+                                
+                            </div> -->
+                              
+                              
+
+                    </div>
+                    <div class="ml-2 mb-3 mt-5">
+                        <div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary me-2">Update </button>
+                                <button type="button" (click)="clearForm('student')" class="btn btn-danger me-2">Clear </button>
+                                <button type="button" class="btn btn-dark me-2" (click)="cancel()" tabindex="0" [routerLink]="['/student']">Cancel </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             
+            </div>
+
+
+        </form>        
+     </div>
+ </div>
+ 

@@ -1,0 +1,83 @@
+<div class="page-header">
+    <div class="page-header-title">
+       <h2>Teacher</h2>
+    </div>
+ </div>
+ <div class="card">
+ <div class="card-body">
+    <div class="row">
+       <div class="col-sm-12">
+         <div>
+          <div class="row">
+             <div class="col-md-12">
+                <div class="content-heading">
+                   <div class="search-top">
+                      <div class="form-group row nopaddingnopadding">
+                         <div class="floating-label col-sm-4">
+                            <mat-form-field class="example-full-width">
+                               <input #searchInput id="search" matInput (keyup)='updateFilter($event)' placeholder="Search" >
+                               <!-- <i [ngClass]="!subscription?.isStopped && subscription ? 'fa fa-spinner fa-spin position-absolute fixed-right right-0' : ''"
+                                  aria-hidden="true"></i> -->
+                               <mat-icon matSuffix>search</mat-icon>
+                            </mat-form-field>
+                         </div>
+                         <div class="col-sm-8 pull-right">
+                            <button class="btn btn-primary green-btn pull-right"
+                               [routerLink]="['add']">Create</button>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            
+ 
+                            <!-- <ngx-datatable class="material" [rows]="row" [columnMode]="'force'"
+                            [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'"
+                            [externalPaging]="true" [messages]="messages"
+                            [count]="page.totalElements" [offset]="page.pageNumber"
+                            [limit]="page.size" (page)='setPage($event)'
+                            (activate)="edit($event)">
+                            
+ 
+                           <ngx-datatable-column [width]="70" [sortable]="false" [canAutoResize]="false"
+                              [draggable]="true" [resizeable]="true" [headerCheckboxable]="true"
+                              [checkboxable]="true">
+                           </ngx-datatable-column> -->
+                           <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
+                           [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true"
+                           [messages]="messages" [count]="page.totalElements" [offset]="0"
+                           [limit]="page.size" (page)='setPage($event)' [selected]="selected"
+                           [selectionType]="SelectionType.checkbox" (select)='onSelect($event)' (activate)="edit($event)">
+ 
+                           <!-- <ngx-datatable-column [sortable]="false" [canAutoResize]="false" [draggable]="true"
+                               [resizeable]="true" [headerCheckboxable]="true" [checkboxable]="true">
+                           </ngx-datatable-column> -->
+                     
+                           <ngx-datatable-column name="Id" prop="idS" [width]="80"></ngx-datatable-column>
+                           <ngx-datatable-column name="Name" prop="name">
+                             
+                           </ngx-datatable-column>
+                           <ngx-datatable-column name="Gender" prop="gender"></ngx-datatable-column>
+                           <ngx-datatable-column name="Phone Number" prop="phoneNumber" ></ngx-datatable-column>
+                           <ngx-datatable-column name="Religion" prop="religion"></ngx-datatable-column>
+                           <ngx-datatable-column name="Date Of Birth" prop="dateOfBirth"></ngx-datatable-column>
+                           <ngx-datatable-column name="Register Date" prop="registerDate"></ngx-datatable-column>
+                           <ngx-datatable-column name="Status" prop="status"></ngx-datatable-column>
+                           
+                           </ngx-datatable>
+ 
+ 
+                        </div>
+                       
+                        <app-table-footer class="footerBottom" [selected]="selected" [page]="page" (changePageSizeEvent)="changePageSize($event)" >
+                      </app-table-footer>
+                    </div>
+                </div>
+             </div>
+          </div>
+         </div>
+       </div>
+    </div>
+ </div>

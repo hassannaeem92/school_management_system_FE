@@ -1,0 +1,557 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.css';
+ @import '~@swimlane/ngx-datatable/assets/icons.css';
+
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import "~@ng-select/ng-select/themes/material.theme.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import 'ngx-toastr/toastr';
+
+
+
+a:hover {
+    cursor: pointer;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// .datatable-header{
+  
+//   background-color: black;
+//   color: white;
+//   height: 40px !important;
+//   padding: 10px 0px;
+//   padding-left: 5px;
+//   margin-bottom: 10px !important;
+// }
+
+
+
+
+// .ngx-datatable.bootstrap:not(.cell-selection) .datatable-body-row:hover,
+// .ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group
+// { 
+//    background: #d6d6d6 !important;
+//    cursor: pointer !important;
+// }
+
+
+
+// .ngx-datatable.material .datatable-footer .page-count {
+//   color: #2d2d2c;
+// }
+
+// .ngx-datatable.material {
+//   border: 1px solid #e3e3e3;
+//   box-shadow: none !important;
+// }
+
+// .datatable-header-inner,
+// .datatable-body-row,
+// .datatable-row-center,
+// .datatable-scroll {
+//     width: 100% !important;
+// }
+
+// .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+//   font-size: 15.5px !important;
+// }
+
+// .ngx-datatable .datatable-header .datatable-header-cell .sort-btn {
+//   position: absolute;
+//   right: 10px;
+//   top: 17px;
+//   &::before {
+//       font-size: 16px;
+//   }
+// }
+
+// .ngx-datatable .datatable-header {
+//   background-color: black;
+// }
+
+// .ngx-datatable {
+//   .datatable-row-wrapper {
+//       &:hover {
+//           cursor: pointer;
+//       }
+//   }
+// }
+
+// .ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell {
+  
+//   &:first-child {
+//       width: 120px !important;
+//   }
+// }
+
+// .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+ 
+//   &:first-child {
+//       width: 120px !important;
+//   }
+// }
+
+// .datatable-checkbox{
+//   margin-left: 20px !important;
+
+
+// }
+
+// .datatable-row-wrapper {
+//   position: relative;
+// }
+
+// .datatable-checkbox {
+//   position: absolute;
+//   top: 50%;
+//   left: 0;
+//   transform: translateY(-50%);
+//   z-index: 1;
+// }
+
+// .datatable-row-wrapper:hover .datatable-checkbox {
+//   z-index: 2;
+// }
+
+// .datatable-checkbox input[type=checkbox]:checked:before {
+//   transform: rotate(-45deg);
+//   height: 0.5rem;
+//   border-color: black;
+//   border-top-style: none;
+//   border-right-style: none;
+// }
+
+// .datatable-checkbox input[type=checkbox]:before {
+//   transition: all 0.3s ease-in-out;
+//   content: "";
+//   position: absolute;
+//   right: 0;
+//   margin-top: -3.5px;
+//   z-index: 1;
+//   width: 1rem;
+//   height: 1rem;
+//   border: 2px solid black;
+// }
+
+// .datatable-checkbox input[type=checkbox]:after {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   width: 1rem;
+//   height: 1rem;
+//   background: white;
+//   cursor: pointer;
+//   border: 2px solid black !important;
+// }
+
+
+
+// .ngx-datatable{
+//   font-weight: 400;
+// line-height: 1.5;
+// color: #212529;
+// text-align: left;
+// font-family: Roboto, "Helvetica Neue", sans-serif !important;
+// font-size: 15.5px !important;
+// word-wrap: break-word;
+// box-sizing: border-box;
+// display: block;
+// overflow: hidden;
+// justify-content: center;
+// position: relative;
+
+// background: #fff;
+// border: 1px solid #e3e3e3;
+// box-shadow: none !important;
+// width: auto;
+// }
+
+// .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell{
+
+// font-family: Roboto, "Helvetica Neue", sans-serif !important;
+// word-wrap: break-word;
+// visibility: visible!important;
+// box-sizing: border-box;
+// display: inline-block;
+// line-height: 1.625;
+// text-align: left;
+// padding: 0.9rem 1.2rem;
+// vertical-align: top;
+// border-top: 0;
+// color: rgba(0, 0, 0, 0.87);
+// transition: width 0.3s ease;
+// font-weight: 400;
+// overflow: hidden;
+// white-space: nowrap;
+// text-overflow: ellipsis;
+// font-size: 15.5px !important;
+// width: 150px;
+// height: 50px;
+// }
+
+// NEw Code 
+
+
+.ngx-datatable.material .datatable-footer .page-count {
+    color: #2d2d2c;
+}
+
+.ngx-datatable {
+  &.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell {
+      background: black;
+      color: white;
+      font-weight: 400;
+      font-size: 15.5px;
+  }
+  &.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell input[type="checkbox"] {
+      display: block;
+  }
+}
+
+.datatable-header-inner,
+.datatable-body-row,
+.datatable-row-center,
+.datatable-scroll {
+    width: 100% !important;
+}
+
+#colOne {
+  .datatable-header .datatable-header-inner .datatable-header-cell:first-child {
+      width: 200px !important;
+  }
+}
+.colBox {
+  .ngx-datatable.material {
+      width: 1600px !important;
+  }
+}
+// .ngx-datatable.material {
+//   width: 1000px !important;
+// }
+// .ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell {
+//   width: 200px !important;
+//   &:first-child {
+//       width: 80px !important;
+//   }
+// }
+// .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+//   width: 200px !important;
+//   &:first-child {
+//       width: 80px !important;
+//   }
+// }
+
+
+.datatable-checkbox input[type=checkbox]:checked:before {
+  transform: rotate(-45deg);
+  height: 0.5rem;
+  border-color: black-hover;
+  border-top-style: none;
+  border-right-style: none;
+}
+
+.datatable-checkbox input[type=checkbox]:before {
+  transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid black;
+}
+
+.datatable-checkbox input[type=checkbox]:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  cursor: pointer;
+  border: 2px solid black !important;
+} 
+
+.datatable-checkbox {
+  position: absolute;
+  margin: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px 0;
+  padding: 0px !important;
+  margin-top: 11px !important;
+  input[type="checkbox"] {
+      position: relative;
+      margin: 0 1.2rem 0 0;
+      cursor: pointer;
+      outline: none;
+      padding: 0px !important;
+      line-height: normal;
+      display: block;
+      font-size: 14px;
+      transition: all 0.3s;
+      left: 13px;
+      &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1rem;
+          height: 1rem;
+          background: white;
+          cursor: pointer;
+      }
+  }
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+  font-size: 15.5px !important;
+}
+
+.ngx-datatable.bootstrap:not(.cell-selection) .datatable-body-row:hover,
+.ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group
+{ 
+   background: #d6d6d6 !important;
+   cursor: pointer !important;
+}
+
+
+.ng-select .ng-select-container {
+  min-height: 55px;
+  font-weight: lighter;
+  
+}
+
+.ng-select.ng-select-single .ng-select-container {
+  height: 55px;
+  font-weight: lighter;
+  
+}
+
+/* Center the search input horizontally within the ng-select field */
+.ng-select.ng-select-single .ng-select-container .ng-input input {
+  margin-top: 10px;
+}
+
+.card .card-header{
+  font-size: 18px !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  padding: 12px 15px !important;
+  background-color: #0C435A !important;
+  position: relative !important;
+}
+
+.green-btn{
+  background-color: #0C435A !important;
+}
+
+.btn-primary{
+  background-color: #0C435A !important;
+
+}
+
+.custom{
+  border: 0px solid black !important;
+}
+
+
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+}
+
+.modal.fade .modal-dialog {
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transform: translate(0, -50px);
+  transform: translate(0, -50px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal.fade .modal-dialog {
+    transition: none;
+  }
+}
+
+.modal.show .modal-dialog {
+  -webkit-transform: none;
+  transform: none;
+}
+
+.modal-dialog-scrollable {
+  display: -ms-flexbox;
+  display: flex;
+  max-height: calc(100% - 1rem);
+}
+
+.modal-dialog-scrollable .modal-content {
+  max-height: calc(100vh - 1rem);
+  overflow: hidden;
+}
+
+.modal-dialog-scrollable .modal-header,
+.modal-dialog-scrollable .modal-footer {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.modal-dialog-scrollable .modal-body {
+  overflow-y: auto;
+}
+
+.modal-dialog-centered {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+
+.modal-dialog-centered::before {
+  display: block;
+  height: calc(100vh - 1rem);
+  content: "";
+}
+
+.modal-dialog-centered.modal-dialog-scrollable {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.modal-dialog-centered.modal-dialog-scrollable .modal-content {
+  max-height: none;
+}
+
+.modal-dialog-centered.modal-dialog-scrollable::before {
+  content: none;
+}
+
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.close{
+  color: red !important;
+}
+
+
+// Print Screen Stule
+
+body {
+  font-family: Arial, sans-serif !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #f8f8f8 !important;
+}
+.invoice-container {
+  width: 80% !important;
+  margin: 50px auto !important;
+  background-color: #fff !important;
+  padding: 20px !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+.invoice-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border-bottom: 1px solid #ddd !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 20px !important;
+}
+.invoice-header h1 {
+  font-size: 24px !important;
+  margin: 0 !important;
+}
+.invoice-header img {
+  max-width: 100px !important;
+}
+.invoice-details {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-bottom: 20px !important;
+}
+.invoice-details div {
+  width: 48% !important;
+}
+.invoice-details h3 {
+  margin: 0 0 10px 0 !important;
+}
+.invoice-details p {
+  margin: 5px 0 !important;
+}
+.invoice-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-bottom: 20px !important;
+}
+.invoice-table th, .invoice-table td {
+  border: 1px solid #ddd !important;
+  padding: 10px !important;
+  text-align: left !important;
+}
+.invoice-table th {
+  background-color: #f4f4f4 !important;
+}
+.invoice-total {
+  text-align: right !important;
+  margin-bottom: 20px !important;
+}
+.invoice-total p {
+  font-size: 18px !important;
+  margin: 0 !important;
+}
+.invoice-footer {
+  text-align: center !important;
+  border-top: 1px solid #ddd !important;
+  padding-top: 20px !important;
+  color: #999 !important;
+}

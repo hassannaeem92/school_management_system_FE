@@ -1,0 +1,146 @@
+// .gradient-custom-2 {
+//   background: #fccb90;
+//   background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+//   background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+// }
+
+// @media (min-width: 768px) {
+//   .gradient-form {
+//     height: 100vh !important;
+//   }
+// }
+
+// @media (min-width: 769px) {
+//   .gradient-custom-2 {
+//     border-top-right-radius: .3rem;
+//     border-bottom-right-radius: .3rem;
+//   }
+// }
+
+
+// .card {
+//   animation: fade-in 1s ease-out;
+// }
+
+// @keyframes fade-in {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(-20px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// .btn {
+//   transition: all 0.3s ease-in-out;
+// }
+
+// .btn:hover {
+//   transform: scale(1.1);
+// }
+
+// NEw Code 
+
+$primary-color: #0C435A;
+$secondary-color: #0C435A;
+$accent-color: #0C435A;
+$highlight-color: #0C435A;
+$background-color: #0C435A;
+
+.gradient-custom-2 {
+  background: $background-color;
+  background: -webkit-linear-gradient(to right, $primary-color, $secondary-color, $accent-color, $highlight-color);
+  background: linear-gradient(to right, $primary-color, $secondary-color, $accent-color, $highlight-color);
+}
+
+@media (min-width: 768px) {
+  .gradient-form {
+    height: 100vh !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+}
+
+.text-black {
+  color: #000;
+}
+
+.card {
+  border: none;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.text-center {
+  margin-bottom: 3rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+.form-outline {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #6c757d;
+  border-radius: 0;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: $primary-color;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label {
+  top: 0;
+  transform: translateY(-35%);
+  font-size: 0.8rem;
+  color: $primary-color;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: darken($primary-color, 10%);
+  border-color: darken($primary-color, 10%);
+}
+
+.small {
+  font-size: 0.875rem;
+  color: #6c757d;
+  line-height: 1.5;
+}
+

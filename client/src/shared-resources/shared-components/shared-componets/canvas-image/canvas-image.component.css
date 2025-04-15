@@ -1,0 +1,18 @@
+.image-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+   
+    
+  }
+
+  .webcam-container {
+    margin-left: 180px;  /* Adjust the value as needed */
+  }
+
+  .image-box img{
+    object-fit: cover;
+    width: 620px;
+    height: 500px;
+    
+  }

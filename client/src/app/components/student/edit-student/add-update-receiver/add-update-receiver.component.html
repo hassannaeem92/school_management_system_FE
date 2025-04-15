@@ -1,0 +1,125 @@
+<div class="row card-box">
+    <div class="col-md-12">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && create(f)">
+        
+            <div class="custom-Tabs">
+          
+                <div class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+                    <div class="card-header">
+                        Receiver Info
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Receiver Name</mat-label>
+                                                    <input minlength="3" matInput type="text" 
+                                                    required
+                                                    name="stuReceiverName1" placeholder="Receiver Name"  [(ngModel)]="model.name"
+                                                    #stuReceiverName1="ngModel" >
+                                                </mat-form-field>
+                                            </div>
+                                            <!-- <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Receiver Relation</mat-label>
+                                                    <input matInput type="text" 
+                                                    
+                                                    name="vacationDays" placeholder=""  [(ngModel)]="model.relation_id"
+                                                    #receiverRelation1="ngModel" >
+                                                </mat-form-field>
+                                            </div> -->
+
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>CNIC</mat-label>
+                                                    <input required maxlength="15" minlength="10" matInput type="text" 
+                                                    (keydown)="onlyDecimalNumberKey($event)"
+                                                    name="receiverNationalId1" placeholder=""  [(ngModel)]="model.cnic"
+                                                    #receiverNationalId1="ngModel" >
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Receiver Number</mat-label>
+                                                    <input required matInput type="text" 
+                                                    maxlength="15"
+                                                    minlength="7"
+                                                    (keydown)="onlyDecimalNumberKey($event)"
+                                                    name="receiverNumber1" placeholder=""  [(ngModel)]="model.mobile_number"
+                                                    #receiverNumber1="ngModel" >
+                                                </mat-form-field>
+                                            </div>
+                                            <!-- <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Name</mat-label>
+                                                    <input matInput type="text" 
+                                                    
+                                                    name="vacationDays" placeholder=""  [(ngModel)]="model.numberOfDays"
+                                                    #vacationDays="ngModel" >
+                                                </mat-form-field>
+                                            </div> -->
+
+                                            <div class="col-sm-4 customDropList">
+                                                <div class="mlty-lable form-group  custom-multi-selector multi-select-margin accountNumber-section"
+                                                    id="country-id">
+                                                
+                                                    <!-- <ng-select [(ngModel)]="bloodGroup">
+                                                        <ng-option *ngFor="let car of bloodGroupArray" [value]="car.id">{{car.name}}</ng-option>
+                                                    </ng-select> -->
+    
+                                                        <ng-select [items]="relationArray"
+                                                        [(ngModel)]="model.relationId"
+                                                        bindLabel="name"
+                                                        placeholder="Relation"
+                                                        [closeOnSelect]="true"
+                                                        [hideSelected]="true"
+                                                        [searchable]="true" 
+                                                        [clearable]="true"
+                                                        name="relation"
+                                                        
+                                                        class="custom">
+                                                        </ng-select>
+                                                   
+                                                </div>
+                                                <!-- <div *ngIf="f.submitted && Country.invalid">
+                                                    <div class="error-msg" [hidden]="!Country.errors.required">
+                                                        This field is required
+                                                    </div>
+                                                </div> -->
+                                            </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div class="ml-2 mb-3 mt-5">
+                        <div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary me-2">Update</button>
+                                <button type="button" (click)="clearForm('student')" class="btn btn-danger me-2">Clear </button>
+                                <button type="button" class="btn btn-dark me-2" tabindex="0" [routerLink]="['/student']">Cancel </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             
+            </div>
+
+
+        </form>        
+     </div>
+ </div>
+ 

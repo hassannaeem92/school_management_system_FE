@@ -1,0 +1,39 @@
+<div class="row mt-3">
+    <div class=" col-md-6 arabic-button-footer">
+        <button type="button"  class="btn btn-danger" *ngIf="isDeleteShow" data-toggle="modal"
+            data-target="#confirmation-modal" [disabled]="selected.length === 0">DELETE</button>
+        <!-- <button type="button" *ngIf="isShowImportDownloadBtn && isImportShow" (click)="clickEvent('importTemp')" class="btn btn-primary">{{IMPORT}}</button> -->
+        <!-- (click)="file.click()"
+            (click)="exportFile()" -->
+        <!-- <button type="button" *ngIf="isShowImportDownloadBtn && isDownloadTemplateShow" (click)="clickEvent('downloadTemp')" class="btn btn-primary">{{DOWNLOAD_TEMPLATE}}</button> -->
+        <!-- <button type="button" *ngIf="onCancelURL" [routerLink]="onCancelURL" class="btn btn-primary">{{btnCancelText}}</button> -->
+        
+    </div>
+  
+
+    <div class="col-md-6" *ngIf="page.totalElements > 0 && showPaginate">
+        <!-- page size component -->
+        <div class="table-view table-view-row-filter">
+            <mat-form-field class="w-25">
+
+                <mat-label>{{tableViewtext}}</mat-label>
+                <mat-select (ngModelChange)="changePageSize($event)" name="ddPageSize" ngModel="5">
+                    <mat-option [value]="'5'">
+                        5
+                    </mat-option>
+                    <mat-option [value]="'15'" *ngIf="page.totalElements > 5">
+                        15
+                    </mat-option>
+                    <mat-option [value]="'50'" *ngIf="page.totalElements > 15">
+                        50
+                    </mat-option>
+                    <mat-option [value]="'100'" *ngIf="page.totalElements > 50">
+                        100
+                    </mat-option>
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+
+    </div>
+</div>

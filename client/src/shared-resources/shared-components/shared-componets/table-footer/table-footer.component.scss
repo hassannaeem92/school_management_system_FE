@@ -1,0 +1,37 @@
+@media screen and (max-width: 767px) {
+    .example-list {
+        margin-left: 0 !important;
+    }
+    .table-view-row-filter {
+        position: absolute !important;;
+        right: 0 !important;;
+        top: -50px !important;;
+    }
+    .adjust-textarea {
+        margin-top: 0 !important;;
+    }
+    .cuppa-dropdown {
+        margin-bottom: 20px !important;;
+    }
+    .footerBottom {
+        .table-view-row-filter {
+            position: relative !important;;
+            top: inherit !important;;
+        }
+    }
+}
+
+.table-view-row-filter {
+    text-align: right !important;;
+}
+
+.table-view-row-filter {
+    .mat-form-field {
+        width: 100px !important;
+    }
+}
+
+
+.table-view-row-filter {
+    text-align: right !important;;
+}

@@ -1,0 +1,239 @@
+<div class="row card-box">
+    <div class="col-md-12">
+       <form #f="ngForm" (ngSubmit)="f.form.valid && updateStudent(f)">
+       <div class="custom-Tabs">
+          <div class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+             <div class="card-header">
+                Student Info
+             </div>
+             <div class="card-body">
+                <div class="row">
+                   <div class="col-sm-12">
+                     
+                         
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div *ngIf="!getImage">
+                                       <div class="student-photo-container">
+                                          <img [src]="'../../../../../assets/dist/img/profile-tiny.png'" alt="Student Photo" />
+                                       </div>
+                                    </div>
+                                    <div *ngIf="getImage">
+                                       <div class="student-photo-container">
+                                          <img [src]="getImage" alt="Student Photo" />
+                                       </div>
+                                    </div>
+
+                                </div>
+                               <div class="col-4" style="margin-top: 190px;">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                     <mat-label>Registration Number</mat-label>
+                                     <input matInput type="text" 
+                                     name="registrationNumber" placeholder="Registration Number" [required]="false" disabled [(ngModel)]="model.registrationNumber"
+                                     #registrationNumber="ngModel">
+                                     <!-- <mat-error *ngIf="f.submitted && stuPlaceOfBirth.invalid">
+                                        <span *ngIf="stuPlaceOfBirth.errors">{{requiredField}}</span>
+                                        </mat-error> -->
+                                  </mat-form-field>
+                               </div>
+                               <div class="col-4" style="margin-top: 190px;">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                     <mat-label>Registration Date</mat-label>
+                                     <input matInput [matDatepicker]="rd" [min]="lessDate" [max]="maxDate" required placeholder="Registraion Date" name="registrationDate" (click)="rd.open()" [(ngModel)]="model.registrationDate" #RegistrationDate="ngModel" readonly>
+                                     <mat-datepicker-toggle matSuffix [for]="rd"></mat-datepicker-toggle>
+                                     <mat-datepicker #rd startView="month"></mat-datepicker>
+                                  </mat-form-field>
+                               </div>
+                               <div class="col checkbox-fade fade-in-primary col-md-2 mb-3" style="margin-top: 190px;">
+                                  <mat-checkbox [(ngModel)]="model.status" name="citizen" (change)="isActive($event)" [checked]="true" [ngModelOptions]="{standalone: true}">
+                                  </mat-checkbox>
+                                  <span>Student Active</span> 
+                               </div>
+                            </div>
+                            <div class="row">
+                               <!-- <div *ngIf="!getImage" class="col-md-9 mb-3">
+                                  <mat-checkbox [(ngModel)]="model.status" name="citizen" (change)="isActive($event)" [checked]="true" [ngModelOptions]="{standalone: true}">
+                                  </mat-checkbox>
+                                  <span>Student Active</span> 
+                                  </div> -->
+                               <div class="col-md-4">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                     <mat-label>First Name</mat-label>
+                                     <input matInput type="text" 
+                                     name="firstName" placeholder="First Name" [required]="true"  [(ngModel)]="model.firstName"
+                                     #firstName="ngModel">
+                                     <!-- <mat-error *ngIf="f.submitted && stuPlaceOfBirth.invalid">
+                                        <span *ngIf="stuPlaceOfBirth.errors">{{requiredField}}</span>
+                                        </mat-error> -->
+                                  </mat-form-field>
+                               </div>
+                               <div class="col-md-4">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                     <mat-label>Last Name</mat-label>
+                                     <input matInput type="text" required
+                                     name="lastName" placeholder="Last Name"  [(ngModel)]="model.lastName"
+                                     #lastName="ngModel" >
+                                  </mat-form-field>
+                               </div>
+                               <div class="col-md-4">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                     <mat-label>Date Of Birth</mat-label>
+                                     <input matInput [matDatepicker]="dp" required
+                                     placeholder="Date Of Birth"
+                                     name="dateOfBirth" (click)="dp.open()"
+                                     [(ngModel)]="model.dateOfBirth" 
+                                     #dateOfBirth="ngModel" readonly>
+                                     <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                                     <mat-datepicker #dp startView="month">
+                                     </mat-datepicker>
+                                     <!-- <mat-error *ngIf="f.submitted && vacationTypeFromDate.invalid">
+                                        <span *ngIf="vacationTypeFromDate.errors?.required">{{requiredField}}</span>
+                                        </mat-error> -->
+                                  </mat-form-field>
+                               </div>
+                               <div class="col-md-4">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                     <mat-label>Place of Birth</mat-label>
+                                     <input matInput type="text" required 
+                                     name="stuPlaceOfBirth" placeholder="Birth Place"  [(ngModel)]="model.placeOfBirth"
+                                     #stuPlaceOfBirth="ngModel" >
+                                  </mat-form-field>
+                               </div>
+                               <div class="col-md-4">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                     <mat-label>Phone</mat-label>
+                                     <input matInput type="text" required
+                                     name="number" (keydown)="onlyDecimalNumberKey($event)" maxlength="15" minlength="7" placeholder="+92 322 3406909"  [(ngModel)]="model.phone"
+                                     #number="ngModel" >
+                                  </mat-form-field>
+                               </div>
+                               <div class="col-md-4">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                     <mat-label>Email</mat-label>
+                                     <input matInput type="email" 
+                                     name="email" placeholder="email@xxxxxx.com"  [(ngModel)]="model.email"
+                                     #stuyEmail="ngModel" >
+                                  </mat-form-field>
+                               </div>
+                               <!-- <mat-form-field appearance="outline" class="example-full-width">
+                                  <mat-label>Blood group</mat-label>
+                                  <input matInput type="text" 
+                                  
+                                  name="stuBloodGroup" placeholder="Blood group"  [(ngModel)]="model.bloodGroup"
+                                  #stuBloodGroup="ngModel" >
+                                  </mat-form-field> -->
+                               <div class="col-sm-4 customDropList">
+                                  <div class="mlty-lable form-group  custom-multi-selector multi-select-margin accountNumber-section"
+                                     id="country-id">
+                                     <!-- <ng-select [(ngModel)]="bloodGroup">
+                                        <ng-option *ngFor="let car of bloodGroupArray" [value]="car.id">{{car.name}}</ng-option>
+                                        </ng-select> -->
+                                     <ng-select [items]="bloodGroupArray"
+                                     [(ngModel)]="model.bloodGroup"
+                                     bindLabel="name"
+                                     placeholder="Blood Group"
+                                     [closeOnSelect]="true"
+                                     [hideSelected]="true"
+                                     [searchable]="true" 
+                                     [clearable]="true"
+                                     name="blood"
+                                     class="custom">
+                                     </ng-select>
+                                     <p>
+                                        {{model.blooooood | json}}
+                                     </p>
+                                  </div>
+                                  <!-- <div *ngIf="f.submitted && Country.invalid">
+                                     <div class="error-msg" [hidden]="!Country.errors.required">
+                                         This field is required
+                                     </div>
+                                     </div> -->
+                               </div>
+                               <!-- <div class="col-md-4">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                      <mat-label>Religion</mat-label>
+                                      <input matInput type="text" 
+                                      
+                                      name="stuPlaceOfBirth" placeholder="Birth Place"  [(ngModel)]="model.religion"
+                                      #stuPlaceOfBirth="ngModel" >
+                                  </mat-form-field>
+                                  </div> -->
+                               <div class="col-sm-4 customDropList">
+                                  <div class="mlty-lable form-group  custom-multi-selector multi-select-margin accountNumber-section"
+                                     id="country-id">
+                                     <ng-select [items]="religionArray"
+                                     bindLabel="name"
+                                     placeholder="Religion"
+                                     appendTo="body"
+                                     [multiple]="false"
+                                     [searchable]="true" 
+                                     [clearable]="true"
+                                     [(ngModel)]="model.religion"
+                                     name="rel"
+                                     class="custom">
+                                     </ng-select>
+                                  </div>
+                                  <!-- <div *ngIf="f.submitted && Country.invalid">
+                                     <div class="error-msg" [hidden]="!Country.errors.required">
+                                         This field is required
+                                     </div>
+                                     </div> -->
+                               </div>
+                               <!-- <div class="col-md-4">
+                                  <mat-form-field appearance="outline" class="example-full-width">
+                                      <mat-label>Gender</mat-label>
+                                      <input matInput type="text" 
+                                      
+                                      name="stuPlaceOfBirth" placeholder="Birth Place"  [(ngModel)]="model.gender"
+                                      #stuPlaceOfBirth="ngModel" >
+                                  </mat-form-field>
+                                  </div> -->
+                               <div class="col-sm-4 customDropList">
+                                  <div class="mlty-lable form-group  custom-multi-selector multi-select-margin accountNumber-section"
+                                     id="country-id">
+                                     <ng-select [items]="genderArray"
+                                     bindLabel="name"
+                                     placeholder="Gender"
+                                     appendTo="body"
+                                     [multiple]="false"
+                                     [searchable]="false" 
+                                     [clearable]="true"
+                                     [(ngModel)]="model.gender"
+                                     name="gen"
+                                     class="custom">
+                                     </ng-select>
+                                  </div>
+                                  <!-- <div *ngIf="f.submitted && Country.invalid">
+                                     <div class="error-msg" [hidden]="!Country.errors.required">
+                                         This field is required
+                                     </div>
+                                     </div> -->
+                               </div>
+
+
+                               <!-- <div>
+                                 <button (click)="getFingerprint()">Scan Fingerprint</button>
+                              </div> -->
+                              <!-- <p *ngIf="fingerprintData">Fingerprint Captured: {{ fingerprintData | json }}</p> -->
+                               
+
+                            </div>
+                         
+                      
+                   </div>
+                </div>
+             </div>
+             <div class="ml-2 mb-3 mt-5">
+                <div>
+                   <div class="col-md-12">
+                      <button type="submit" class="btn btn-primary me-2">Update </button>
+                      <button type="button" (click)="clearForm('student', f)" class="btn btn-danger me-2">Clear </button>
+                      <button type="button" class="btn btn-dark" tabindex="0" [routerLink]="['/student']">Cancel </button>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       </form>        
+    </div>
+ </div>

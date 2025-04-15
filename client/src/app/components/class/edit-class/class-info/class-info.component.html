@@ -1,0 +1,38 @@
+<div class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+    <div class="card-header"> Class Info </div>
+    <form #f="ngForm" (ngSubmit)="f.form.valid && save(f)">
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+
+                <div class="col-md-5">
+                  <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Class Name</mat-label>
+                    <input matInput type="text" name="className" placeholder="First Name" [required]="true" [(ngModel)]="model.className" #firstName="ngModel">
+                  </mat-form-field>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ml-2 mb-3 mt-5">
+      <div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary me-2">Update </button>
+          <button *ngIf="mode == 'edit'"  type="submit" class="btn btn-success me-2">Update </button>
+          <button type="button" (click)="clearForm()"  class="btn btn-danger me-2">Clear </button>
+          <button type="button" class="btn btn-dark me-2" tabindex="0" [routerLink]="['/class']">Cancel </button>
+        </div>
+      </div>
+    </div>
+
+    </form>
+
+  </div>

@@ -1,0 +1,142 @@
+<div class="card mb-4 tab-pane fade show active" data-backdrop="static" id="home" role="tabpanel">
+  <div class="card-header"> Add Student </div>
+  <div class="card-body">
+     <div class="row">
+        <div class="col-sm-12">
+           <div class="row">
+              <div class="col-md-12">
+                 <div class="row">
+                    <div class="row">
+                       <div class="floating-label col-sm-3">
+                          <mat-form-field class="example-full-width">
+                             <input #searchInput id="search" matInput [(ngModel)]="searchKeyword" (keyup)='updateFilter($event)' placeholder="Search" >
+                             <!-- <i [ngClass]="!subscription?.isStopped && subscription ? 'fa fa-spinner fa-spin position-absolute fixed-right right-0' : ''"
+                                aria-hidden="true"></i> -->
+                             <mat-icon matSuffix>search</mat-icon>
+                          </mat-form-field>
+                       </div>
+                       <div class="col-sm-3"></div>
+                       <div class="col-sm-1"></div>
+                       <ng-container class="filter-section">
+                          <div class="col-sm-3 customDropList">
+                             <div class="mlty-lable form-group  custom-multi-selector multi-select-margin accountNumber-section" id="section-id">
+                                <ng-select [items]="sectionArray" (change)="sectionChange($event)" bindLabel="name" placeholder="Section" appendTo="body" [multiple]="false" [searchable]="true" [clearable]="true" [(ngModel)]="model.sectionList" name="rel" class="custom"></ng-select>
+                             </div>
+                          </div>
+                          <!-- <div class="col-sm-3 customDropList">
+                             <div class="mlty-lable form-group  custom-multi-selector multi-select-margin accountNumber-section" id="teacehr-id">
+                                <ng-select [items]="teacherArray" bindLabel="name" placeholder="Teacher" appendTo="body" [multiple]="false" [searchable]="true" [clearable]="true" [(ngModel)]="model.teacherList" name="rel" class="custom"></ng-select>
+                             </div>
+                          </div> -->
+                          <div class="col-sm-2 mt-2">
+                             <button [disabled]="(!model.sectionList)" type="button" (click)="assignStudentModal()" class="btn btn-primary me-2">Assign Student</button>
+                          </div>
+                       </ng-container>
+                    </div>
+                    <!-- *ngIf="rows && rows.length" -->
+                    <div class="col-md-12">
+                       
+
+                       <div class="table-responsive">
+                        <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
+                        [footerHeight]="50" [count]="page.totalElements" [rowHeight]="'auto'" [externalPaging]="true"
+                        [messages]="messages" [offset]="0" [count]="page.totalElements" [limit]="page.size" (page)='setPage($event)'
+                        [selected]="selected"
+                        [selectionType]="SelectionType.checkbox" (select)='onSelect($event)'>
+                       
+                        <ngx-datatable-column [sortable]="false" [canAutoResize]="false"
+                        [draggable]="true" [resizeable]="true" [headerCheckboxable]="true"
+                        [checkboxable]="true">
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Id" prop="idS" [width]="80"></ngx-datatable-column>
+                        <ngx-datatable-column name="Name" prop="name">
+                        </ngx-datatable-column>
+                        <!-- <ngx-datatable-column name="Last Name" prop="last_name"></ngx-datatable-column> -->
+                        </ngx-datatable>
+                     </div>
+                       <app-table-footer [isDeleteShow]="rows.length" [selected]="selected" [showPaginate]="true" class="footerBottom"  [page]="page" (changePageSizeEvent)="changePageSize($event)" >
+                       </app-table-footer>
+                       
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="ml-2 mb-3 mt-5">
+     <div>
+        <div class="col-md-12">
+           <!-- <button type="submit" class="btn btn-primary me-2">Save </button>
+              <button *ngIf="mode == 'edit'"  type="submit" class="btn btn-success me-2">Update </button>
+              <button type="button"  class="btn btn-danger me-2">Clear </button>
+              <button type="button" class="btn btn-dark me-2" tabindex="0" [routerLink]="['/student']">Cancel </button> -->
+        </div>
+     </div>
+  </div>
+</div>
+<div class="modal fade" data-backdrop="static" id="assignStudent">
+  <div class="modal-dialog modal-xl" style="max-width: 80%; max-height: 100%;">
+     <div class="modal-content">
+        <div class="modal-header">
+           <h4 class="modal-title mt-2" style="font-weight: bold; font-size: 20px">Assign Student</h4>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">×</span>
+           </button>
+        </div>
+        <div class="modal-body modal-custome-body">
+           <div class="row">
+              <div class="col-md-12">
+
+               <div class="col-sm-4">
+                  <mat-form-field class="example-full-width">
+                     <input #searchInput id="search" matInput [(ngModel)]="searchKeyword2" (keyup)='updateFilterModal($event)' placeholder="Search" >
+                     <!-- <i [ngClass]="!subscription?.isStopped && subscription ? 'fa fa-spinner fa-spin position-absolute fixed-right right-0' : ''"
+                        aria-hidden="true"></i> -->
+                     <mat-icon matSuffix>search</mat-icon>
+                  </mat-form-field>
+
+               </div>
+
+                 <div class="table-responsive">
+                    <ngx-datatable class="material" [rows]="studentsRemArray" [columnMode]="'force'" [headerHeight]="50"
+                    [footerHeight]="50" [count]="page2.totalElements" [rowHeight]="'auto'" [externalPaging]="true"
+                    [messages]="messages" [offset]="0" [count]="page2.totalElements" [limit]="page2.size" (page)='setPageAssignStudent($event)'
+                    [selected]="selectedStudent"
+                    [selectionType]="SelectionType.checkbox" (select)='onSelectStudent($event)'>
+                   
+                    <ngx-datatable-column [sortable]="false" [canAutoResize]="false"
+                    [draggable]="true" [resizeable]="true" [headerCheckboxable]="true"
+                    [checkboxable]="true">
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Id" prop="idS" [width]="80"></ngx-datatable-column>
+                    <ngx-datatable-column name="Name" prop="name">
+                    </ngx-datatable-column>
+                    <!-- <ngx-datatable-column name="Last Name" prop="last_name"></ngx-datatable-column> -->
+                    </ngx-datatable>
+                 </div>
+                 
+              </div>
+           </div>
+           
+        </div>
+        
+           <!-- <app-table-footer [isDeleteShow]="studentsRemArray.length" class="footerBottom" [selected]="selectedStudent" [page]="page2" (changePageSizeEvent)="changePageSize($event, true)" >
+           </app-table-footer> -->
+
+        
+        <div class="ml-2 mb-3 mt-4">
+           <div>
+              <div class="col-md-12">
+                 <button type="button" (click)="assignSectionStudent()" class="btn btn-primary me-2">Assign </button>
+                 <!-- <button *ngIf="mode == 'edit'"  type="submit" class="btn btn-success me-2">Update </button>
+                    <button type="button"  class="btn btn-danger me-2">Clear </button> -->
+                 <button type="button" class="btn btn-dark me-2" tabindex="0" data-dismiss="modal">Cancel </button>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<app-confirmation-modal id="confirmation-modal" class="modal fade" role="dialog" tabindex="-1"
+  aria-labelledby="exampleModalLabel" (deleteEvent)="toDelete()" aria-hidden="true"></app-confirmation-modal>

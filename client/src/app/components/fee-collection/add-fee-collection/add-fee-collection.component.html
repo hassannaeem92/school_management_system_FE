@@ -1,0 +1,152 @@
+<div class="row card-box">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mt-2 mb-3"> Fee </h2>
+        </div>
+        <form #form="ngForm">
+            <div class="custom-Tabs">
+
+                <div *ngIf="activityType == 'home'" class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+                    <div class="card-header"> Fee Collection </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="row">
+
+                                            <ng-container class="filter-section">
+                                                <div class="col-sm-4 customDropList">
+                                                    <div class="mlty-lable form-group  custom-multi-selector multi-select-margin accountNumber-section" id="section-id">
+                                                        <ng-select [items]="studentArray" (change)="studentChange($event)" bindLabel="name" placeholder="Student" appendTo="body" [multiple]="false" [searchable]="true" [clearable]="true" [(ngModel)]="model.activeStudent" name="rel" class="custom"></ng-select>
+                                                    </div>
+                                                </div>
+
+                                            </ng-container>
+
+                                           
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Class</mat-label>
+                                                    <input  matInput type="text"  name="class" placeholder="" readonly [(ngModel)]="model.class" >
+                                                </mat-form-field>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Section</mat-label>
+                                                    <input matInput type="text" readonly  name="section" placeholder=""  [(ngModel)]="model.section" >
+                                                </mat-form-field>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" readonly class="example-full-width">
+                                                    <mat-label>Fee Amount</mat-label>
+                                                    <input  matInput type="text" readonly  name="amount" placeholder="" [(ngModel)]="model.amount">
+                                                </mat-form-field>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Month</mat-label>
+                                                    <input matInput [matDatepicker]="frd" readonly [(ngModel)]="model.fromDate" [ngModelOptions]="{standalone: true}" #FromDate="ngModel">
+                                                    <mat-datepicker-toggle matSuffix [for]="frd"></mat-datepicker-toggle>
+                                                    <mat-datepicker #frd startView="multi-year" (monthSelected)="chosenMonthHandler($event, frd, 'fromDate')" panelClass="example-month-picker">
+                                                    </mat-datepicker>
+                                                </mat-form-field>
+                                            </div>
+                                            <!-- (yearSelected)="chosenYearHandler($event, 'fromDate')"  -->
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="ml-2 mb-3 mt-5">
+                        <div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary me-2">Save </button>
+                                <button type="button" (click)="clearForm('teacher', f)" class="btn btn-danger me-2">Clear </button>
+                                <button type="button" class="btn btn-dark me-2" tabindex="0" [routerLink]="['/feeCollection']">Cancel </button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-right">
+        <button
+            type="button"
+            class="btn btn-dark btn-addItem" data-toggle="collapse"
+            href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Add Amount</button>
+    </div>
+</div>
+
+<div class="row card-box collapse mt-2" id="collapseExample">
+    <div class="col-md-12">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && create(f)">
+            <div class="custom-Tabs">
+
+                <div *ngIf="activityType == 'home'" class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+                   
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="row">
+
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Amount</mat-label>
+                                                    <input  matInput type="text" (keydown)="onlyDecimalNumberKey($event)" (keyup)="onPaidAmountChange($event)" required name="paidAmount" placeholder="" [(ngModel)]="model.paidAmount">
+                                                </mat-form-field>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <mat-form-field appearance="outline" class="example-full-width">
+                                                    <mat-label>Pending Amount</mat-label>
+                                                    <input  matInput type="text" readonly name="pendingAmount" placeholder="" [(ngModel)]="model.pendingAmount">
+                                                </mat-form-field>
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    <div class="ml-2 mb-3 mt-5">
+                        <div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary me-2">Save </button>
+                                <button type="button" (click)="clearForm('teacher', f)" class="btn btn-danger me-2">Clear </button>
+                                <button type="button" class="btn btn-dark me-2" tabindex="0" [routerLink]="['/feeCollection']">Cancel </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

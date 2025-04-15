@@ -1,0 +1,86 @@
+/* .form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  } */
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+  .card-body{
+    border-top: 3px solid Black;
+  }
+
+  .pull-right {
+    float: right !important;
+  }
+  
+
+  .table-responsive {
+    overflow-x: auto !important;
+}
+.table-responsive {
+  min-height: 135px!important;
+}
+.table-responsive {
+    overflow-x: auto !important;
+}
+
+
+.getCellClass {
+  background-color: blue !important;
+  color: white !important;
+}
+
+
+thead{
+  background-color: black;
+  color: white;
+  font-weight: lighter;
+}
+
+datatable-header-cell{
+  width: 0px !important;
+}
+
+
+
+
+// Deleted
+
+.datatable-footer-inner{
+  .datatable-icon-left:before{
+    content: '\70';
+  }
+  .datatable-icon-right:before{
+    content: '\6f';
+  }
+}
+
+
+.hidden-footer .datatable-footer-inner {
+  height: 0 !important;
+}
+
+
+.datatable-footer-inner{
+  line-height: 1.5;
+  text-align: left;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+  word-wrap: break-word;
+  visibility: visible!important;
+  font-size: 15.5px !important;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.54);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+}
+
+
+// Loader Css

@@ -1,0 +1,69 @@
+<div class="row card-box">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="mt-2 mb-3"> Class Registration </h2>
+      </div>
+      <form #f="ngForm" (ngSubmit)="f.form.valid && save(f)">
+        <div class="custom-Tabs">
+          <!-- <div class="task-bar">
+            <div class="card">
+              <div class="card-body">
+                
+              </div>
+            </div>
+          </div> -->
+
+          <div class="tabs-bar">
+                
+            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" id="home-tab" data-toggle="tab"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        href="#home" [routerLink]="['./']" role="tab" aria-controls="home"
+                        aria-selected="false">Class Information</a>
+                </li>
+                
+
+            
+            </ul>
+        </div>
+
+          <div class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+            <div class="card-header"> Class Info </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row">
+
+                    
+
+                        <div class="col-md-5">
+                          <mat-form-field appearance="outline" class="example-full-width">
+                            <mat-label>Class Name</mat-label>
+                            <input matInput type="text" name="firstName" placeholder="First Name" [required]="true" [(ngModel)]="model.className" #firstName="ngModel">
+                          </mat-form-field>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ml-2 mb-3 mt-5">
+              <div>
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary me-2">Save </button>
+                  <button *ngIf="mode == 'edit'"  type="submit" class="btn btn-success me-2">Update </button>
+                  <button type="button"  class="btn btn-danger me-2">Clear </button>
+                  <button type="button" class="btn btn-dark me-2" tabindex="0" [routerLink]="['/class']">Cancel </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </form>
+    </div>
+  </div>

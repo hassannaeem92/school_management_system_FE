@@ -1,0 +1,91 @@
+<!-- <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <h2 class="text-center mb-4">Login</h2>
+        <form (submit)="login()" class="border p-4 rounded">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   -->
+
+
+   <section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <div class="col-lg-6">
+                <div class="card-body p-md-5 mx-md-4">
+  
+                  <div class="text-center">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                      style="width: 185px;" alt="logo">
+                    <h4 class="mt-1 mb-5 pb-1">We are The BLS</h4>
+                  </div>
+  
+                  <form (submit)="signUp()">
+                    <p>Please login to your account</p>
+  
+                    <div class="form-outline mb-4">
+                      <input id="firstName" [(ngModel)]="model.firstName" name="firstName" required type="firstName" id="form2Example11" class="form-control"
+                         />
+                      <label class="form-label" for="form2Example11">First Name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input id="lastName" [(ngModel)]="model.lastName" name="lastName" required type="text" id="form2Example11" class="form-control"
+                         />
+                      <label class="form-label" for="form2Example11">Last Name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input id="email" [(ngModel)]="model.email" name="username" required type="email" id="form2Example11" class="form-control"
+                         />
+                      <label class="form-label" for="form2Example11">Email</label>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <input id="password" [(ngModel)]="model.password" name="password" required type="password" id="form2Example22" class="form-control" />
+                      <label class="form-label" for="form2Example22">Password</label>
+                    </div>
+  
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Sign Up
+                        </button>
+                      <!-- <a class="text-muted" href="#!">Forgot password?</a> -->
+                    </div>
+  
+                    <!-- <div class="d-flex align-items-center justify-content-center pb-4">
+                      <p class="mb-0 me-2">Don't have an account?</p>
+                      <button type="button" class="btn btn-outline-danger">Create new</button>
+                    </div> -->
+  
+                  </form>
+  
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                  <h4 class="mb-4">We are more than just a School</h4>
+                  <p class="small mb-0">We go above and beyond traditional education, providing students with a platform to thrive academically, socially, and emotionally.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

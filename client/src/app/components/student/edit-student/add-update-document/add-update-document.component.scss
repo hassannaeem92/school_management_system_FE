@@ -1,0 +1,188 @@
+.example-full-width {
+    width: 100%;
+  }
+
+
+  // .card-body{
+  //   border-top: 3px solid Black;
+  // }
+
+  .pull-right {
+    float: right !important;
+  }
+
+  .card .card-header{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    padding: 12px 15px;
+    background-color: #464954;
+    position: relative;
+  }
+
+  .custom-Tabs {
+    .tabs-bar {
+        width: 100%;
+        // height: 60px;
+        overflow-x: auto;
+        &:-webkit-scrollbar-track {
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar {
+            width: 2px;
+            height: 10px;
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+            background-color: #ddd;
+        }
+    }
+    .nav-drop-list {
+        position: absolute;
+        right: 15px;
+        top: 0px;
+        width: 50px;
+        text-align: center;
+        background-color: white;
+        padding: 5px;
+    }
+
+    // .customDropList{
+    //   outline: none !important;
+    //   border-radius: 0 !important;
+    //   border: 1px solid #2c2b2b99 !important;
+    //   border-radius: 5px !important;
+    //   min-height: 0px !important;
+    //   top: 4px !important;
+
+    // }
+
+    .ng-select.custom {
+      
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #564c4c99;
+      font-family: Roboto, sans-serif;
+  }
+  
+ 
+
+}
+
+
+
+// Doenloas?
+
+.file-list-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.file-list-item .file-name {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.file-list-item .download-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.file-list-item .download-button:hover {
+  background-color: #0056b3;
+}
+
+
+//New 
+
+// .file-list-item {
+//   border: 1px solid #ddd;
+//   border-radius: 5px;
+//   padding: 10px;
+//   margin-bottom: 10px;
+//   display: flex;
+//   align-items: center;
+//   background-color: #f9f9f9;
+// }
+
+// .file-box {
+//   width: 100px; /* Adjust the width as needed for a square box */
+//   height: 100px; /* Adjust the height as needed for a square box */
+//   background-color: #f0f0f0;
+//   border-radius: 5px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   margin-right: 20px; /* Adjust the margin as needed */
+// }
+
+// .pdf-icon {
+//   max-width: 50px; /* Adjust the max width for the image */
+//   max-height: 50px; /* Adjust the max height for the image */
+// }
+
+// .file-name {
+//   font-size: 16px;
+//   font-weight: bold;
+// }
+
+// .download-button {
+//   background-color: #007bff;
+//   color: #fff;
+//   border: none;
+//   border-radius: 3px;
+//   padding: 8px 15px;
+//   font-size: 14px;
+//   text-transform: uppercase;
+//   cursor: pointer;
+// }
+
+// .download-button:hover {
+//   background-color: #0056b3;
+// }
+
+
+// .square-box {
+//   width: 200px; /* Adjust the width as needed */
+//   height: 200px; /* This ensures it's a square */
+//   background-color: #3498db; /* Background color of the square */
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// /* Define the styles for the button inside the square box */
+// .button {
+//   padding: 10px 20px; /* Adjust padding as needed */
+//   background-color: #e74c3c; /* Background color of the button */
+//   color: #fff; /* Text color of the button */
+//   border: none;
+//   cursor: pointer;
+//   font-size: 16px; /* Adjust font size as needed */
+//   border-radius: 5px; /* Adjust border radius as needed */
+// }
+
+// /* Hover effect for the button (optional) */
+// .button:hover {
+//   background-color: #c0392b; /* Change background color on hover */
+// }

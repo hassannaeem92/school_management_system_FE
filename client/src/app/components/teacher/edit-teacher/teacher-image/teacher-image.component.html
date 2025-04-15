@@ -1,0 +1,47 @@
+<div class="row card-box">
+    <div class="col-md-12">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && updateStudentImage(f)">
+            <div class="custom-Tabs">
+                <div class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+                    <div class="card-header">
+                        Teacher Image
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div *ngIf="getImage" class="col-md-6 student-photo-container">
+                                <img [src]="getImage" alt="Student Photo" />
+                            </div>
+
+                            <div *ngIf="!getImage" class="col-md-6 student-photo-container">
+                                <img [src]="'../../../../../assets/dist/img/profile-tiny.png'" alt="Teacher Photo" />
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div>
+                                    <app-canvas-image (changeOccure)="changeOccure($event)" (takeResponse)="getTakeData($event)" (ImageResponse)="getImageData($event)" [isUpdateClicked]="isUpdate" [isBrowseClicked]="isBrowse"  [isOpenCamClicked]="isCamopen" [isTakePicClicked]="isTakePiced"></app-canvas-image>
+                                </div>
+                            </div>
+                                
+                           
+                        </div>
+
+                    </div>
+                    <div class="ml-2 mb-3 mt-5">
+                        <div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary me-2">Update</button>
+                                <!--<button type="button" (click)="clearForm('student')" class="btn btn-danger me-2">Clear </button> -->
+                                <button type="button" class="btn btn-dark me-2" tabindex="0" [routerLink]="['/student']">Cancel</button>
+                                <button *ngIf="!isTakePicEnable" type="button" (click)="takePic()" class="btn btn-info me-2" tabindex="0">Take Picture</button>
+                                <button type="button" (click)="onOpenCamera()" class="btn btn-danger me-2" tabindex="0">Re Take</button>
+                                <button type="button" (click)="onBrowseClicke()" class="btn btn-warning me-2" tabindex="0">Browse</button>
+                                
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

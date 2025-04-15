@@ -1,0 +1,143 @@
+<div class="row card-box">
+    <div class="col-md-12">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && updateParent(f)">
+        
+            <div class="custom-Tabs">
+          
+                <div class="card mb-4 tab-pane fade show active" id="home" role="tabpanel">
+                    <div class="card-header">
+                        Parent Info
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Father Name</mat-label>
+                                            <input matInput type="text" 
+                                            required
+                                            name="stuFatherName" placeholder="Father Name"  [(ngModel)]="model.father_name"
+                                            #stuFatherName="ngModel" >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Father Number</mat-label>
+                                            <input matInput type="text" required
+                                            (keydown)="onlyDecimalNumberKey($event)"
+                                            name="vacationDays" placeholder="Father Number"  [(ngModel)]="model.father_number"
+                                            #stuFatherNumber="ngModel" >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Father Occupation</mat-label>
+                                            <input matInput type="text" 
+                                            required
+                                            name="stuFatherOccupation" placeholder="Father Occupation"  [(ngModel)]="model.father_occupation"
+                                            #stuFatherOccupation="ngModel" >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Home Numnber</mat-label>
+                                            <input matInput type="text" required
+                                            (keydown)="onlyDecimalNumberKey($event)"
+                                            name="stuFatherPtcl" placeholder="Home Numnber"  [(ngModel)]="model.home_number"
+                                            #stuFatherPtcl="ngModel" >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Mother Name</mat-label>
+                                            <input matInput type="text" required
+                                            required
+                                            name="stuMotherName" placeholder="Mother Name"  [(ngModel)]="model.mother_name"
+                                            #stuMotherName="ngModel" >
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Mother Number</mat-label>
+                                            <input matInput type="text" required
+                                            (keydown)="onlyDecimalNumberKey($event)"
+                                            minlength="7"
+                                            maxlength="15"
+                                            name="stuMotherNumber" placeholder="Mother Number"  [(ngModel)]="model.mother_number"
+                                            #stuMotherNumber="ngModel" >
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Mother Occupation</mat-label>
+                                            <input matInput type="text" 
+                                            required
+                                            name="stuMotherOccupation" placeholder="Mother Occupation"  [(ngModel)]="model.mother_occupation"
+                                            #stuMotherOccupation="ngModel" >
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Address</mat-label>
+                                            <input matInput type="text" 
+                                            required
+                                            name="stuHomeAddress" placeholder="Address"  [(ngModel)]="model.address"
+                                            #stuHomeAddress="ngModel" >
+                                        </mat-form-field>
+                                    </div> 
+
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Postal Address</mat-label>
+                                            <input matInput type="text" 
+                                            required
+                                            name="stuPostalAddress" placeholder="Postal Address"  [(ngModel)]="model.postal_address"
+                                            #stuPostalAddress="ngModel" >
+                                        </mat-form-field>
+                                    </div> 
+
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline" class="example-full-width">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput type="text" 
+                                            pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+                                            
+                                            name="stuParentEmail" placeholder="Email"  [(ngModel)]="model.email"
+                                            #stuParentEmail="ngModel" >
+                                        </mat-form-field>
+                                    </div> 
+                                    
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div class="ml-2 mb-3 mt-5">
+                        <div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary me-2">Update </button>
+                                <button type="button" (click)="clearForm('student')" class="btn btn-danger me-2">Clear </button>
+                                <button type="button" class="btn btn-dark me-2" tabindex="0" [routerLink]="['/student']">Cancel </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             
+            </div>
+
+
+        </form>        
+     </div>
+ </div>
+ 
